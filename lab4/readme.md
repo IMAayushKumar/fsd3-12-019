@@ -15,7 +15,7 @@
     7.add node module in the gitignore
     8.to use npm run dev
 
-## REST API
+## REST API(Representational State Transfer Application Programmm)
 - majority backend server return only the data not html file 
 - RESST API uses(get ,post ,put,patch,delete) method to communicate with client
 - any broswer can cheak only get method 
