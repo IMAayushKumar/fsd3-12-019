@@ -7,3 +7,10 @@ let users=[
 ]
 let nextId=3;
 export const getUsers=()=> users;
+export const addUsers=(user)=>{
+    user.id=nextId++;
+    users.push(user);
+    return user;
+};
+
+
