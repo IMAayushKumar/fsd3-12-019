@@ -14,3 +14,9 @@
             "dev":"nodemon prg1.js"
         }
 
+## Static Import
+    In Express we can add any static HTML pages with the help of express.static method
+
+    Express supports middleWare,When we have to execute some function before server execution thenwe use middleWare 
+    App.use always apply to insert any middle ware             
+
