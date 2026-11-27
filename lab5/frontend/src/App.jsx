@@ -1,57 +1,23 @@
-import MyButton from "./MyButton";
-
-
-const User = () => {
-  const data = {
-    name: "Ramesh Mishra",
-    age: 32,
-    isAdmin: false,
-    theme: "dark",
-  };
-
-  return (
-    <>
-      <h1>Name : {data.name}</h1>
-      <h2>Age: {data.age}</h2>
-    </>
-  );
-};
-
-const Book = (props) => {
-  return (
-    <>
-      <h1>Book Name: {props.name}</h1>
-      <h2>Price: {props.price}</h2>
-      <h3>Author: {props.author}</h3>
-    </>
-  );
-};
+import { useState } from "react";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 
 function App() {
-  const bookData = [
-    {
-      name: "Let Us Java",
-      author: "Yashwant Kanitkar",
-      price: 750,
-    },
-    {
-      name: "Let Us React",
-      author: "Vikash Kanitkar",
-      price: 950,
-    },
-    {
-      name: "Let Us NodeJs",
-      author: "Suresh Kanitkar",
-      price: 650,
-    },
-  ];
+  const [isLogin, setIsLogin] = useState(false);
+  const [username, setUsername] = useState("");
 
-  return (
-    <>
-      <MyButton />
-      <MyButton />
-    </>
-  );
+  const handleLogin = ({ username: signedInUsername }) => {
+    setUsername(signedInUsername);
+    setIsLogin(true);
+  };
+
+  if (isLogin) {
+    return (
+      <Home username={username} onLogout={() => setIsLogin(false)} />
+    );
+  }
+
+  return <Login onLogin={handleLogin} />;
 }
 
 export default App;

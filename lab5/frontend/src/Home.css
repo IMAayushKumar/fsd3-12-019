@@ -1,0 +1,97 @@
+/* Home page styles. Tokens are scoped to .home and match Login.css. */
+.home {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --fg: #14202e;
+  --muted: #4a5a6c;
+  --border: #b9c3cf;
+  --accent: #0b5cad;
+  --on-accent: #ffffff;
+  --danger: #b42318;
+  --danger-bg: #fdecea;
+  --ring: #0b5cad;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.home *, .home *::before, .home *::after { box-sizing: border-box; }
+
+@media (prefers-color-scheme: dark) {
+  .home {
+    --bg: #0e141b;
+    --surface: #171f29;
+    --fg: #e8edf3;
+    --muted: #a3b0bf;
+    --border: #3b4856;
+    --accent: #5aa8f0;
+    --on-accent: #08121d;
+    --danger: #ff8a80;
+    --danger-bg: #3a1a18;
+    --ring: #7bbcf6;
+  }
+}
+
+.home-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.home-logo {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.home-logo svg { width: 20px; height: 20px; }
+.home-brand { font-weight: 700; }
+
+.home-logout {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--fg);
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.home-logout svg { width: 18px; height: 18px; }
+.home-logout:hover { color: var(--danger); border-color: var(--danger); background: var(--danger-bg); }
+.home-logout:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+.home-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+}
+.home-main h1 {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.home-sub { margin: 0; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-logout { transition: none; }
+}
