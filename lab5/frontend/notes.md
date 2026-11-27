@@ -37,5 +37,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(),tailwindcss()],
 })
-`
+
 4-open src/index.css and remove all contents 
+```
+
+
+### React Import /Export 
+  - Must start with capital letter.
+  - extension should be .jsx.
+  - must return some html content or component.
+  - we can import only if that particular component is exported.
